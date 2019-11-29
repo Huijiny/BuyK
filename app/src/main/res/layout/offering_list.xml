@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4"
+
+    tools:context=".OfferingList">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="443dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <ImageButton
+            android:id="@+id/filterIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/modelPlusBtn"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/listSearchModelName"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/colorBg"
+            android:padding="3dp"
+            android:src="@mipmap/ic_filter_4_x" />
+
+        <TextView
+            android:id="@+id/listSearchModelName"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="23dp"
+            android:layout_toRightOf="@id/backBtn"
+            android:text="BMW외 1모델"
+            android:textColor="#000000"
+            android:textSize="16.9dp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listFilterRecylerView"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/backBtn"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/colorBg"
+            android:gravity="center_horizontal"
+            android:requiresFadingEdge="horizontal"
+            android:overScrollMode="never"
+            tools:layout_editor_absoluteX="-1dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/listFilterAlertText"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/backBtn"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:onClick="onClickSetFilter"
+            android:text="탭해서 필터를 설정해 보세요"
+            android:textSize="16.9dp"
+            android:typeface="sans"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorBg"
+            android:padding="2dp"
+            android:src="@mipmap/arrow_left_4_x" />
+
+        <ImageButton
+            android:id="@+id/modelPlusBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/listSearchModelName"
+            android:layout_marginEnd="32dp"
+            android:background="@color/colorBg"
+            android:src="@mipmap/ic_plus_4_x" />
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorBg"
+        android:overScrollMode="never"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:listitem="@layout/offering_list_item">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/noResultView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:windowSoftInputMode="stateUnspecified|adjustUnspecified">
+
+        <TextView
+            android:id="@+id/noResultGuideTextInSoldView"
+            android:layout_width="208dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/default_regular"
+            android:text="검색하신 모델/카테고리/필터에 \n 해당하는 바이크가 아직 없습니다."
+            android:textSize="10sp"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/noResultImageInSoldView"
+            android:layout_width="212dp"
+            android:layout_height="106dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:visibility="visible"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/ic_noresultimg_4_x" />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

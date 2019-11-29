@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentSoldOut"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/myRegisteredBikeItemInSoldOut"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/noResultGuideTextInSoldView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:text="종료된 매물이 없습니다."
+        android:textSize="11dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/myRegisteredBikeItemInSoldOut"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/noResultImageInSoldView"
+        android:layout_width="213dp"
+        android:layout_height="106dp"
+        android:layout_marginBottom="256dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/noResultGuideTextInSoldView"
+        app:layout_constraintStart_toStartOf="@+id/noResultGuideTextInSoldView"
+        app:layout_constraintTop_toBottomOf="@+id/noResultGuideTextInSoldView"
+        app:srcCompat="@drawable/ic_noresultimg_4_x" />
+</android.support.constraint.ConstraintLayout>

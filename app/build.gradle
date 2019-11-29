@@ -1,0 +1,136 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+
+//noinspection GradleCompatible
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+
+apply plugin: 'realm-android'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.buyk.crocompany.buyk_android"
+        minSdkVersion 24
+        targetSdkVersion 27
+
+
+        versionCode 38
+        versionName "1.1.5"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    dataBinding {
+        enabled = true
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/java/com/buyk/crocompany/util', 'src/main/java/com.buyk.crocompany.buky_android', 'src/main/java/com.buyk.crocompany.buyk_android/model']
+            res.srcDirs = ['src/main/res', 'src/main/res/layout/component']
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    productFlavors {
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:27.0.3'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.daimajia.numberprogressbar:library:1.4@aar'
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.appyvet:materialrangebar:1.4.1'
+    implementation 'com.yahoo.mobile.client.android.util.rangeseekbar:rangeseekbar-library:0.1.0'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.kakao.sdk:kakaotalk:1.12.0'
+    implementation 'com.kakao.sdk:plusfriend:1.12.0'
+    implementation 'com.timehop.stickyheadersrecyclerview:library:0.4.3'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'gun0912.ted:tedpermission:2.2.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.google.code.gson:gson:2.8.4'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.android.support:multidex:1.0.2'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor "com.github.bumptech.glide:compiler:4.7.1"
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.3@aar') {
+        transitive = true;
+    }
+    implementation 'com.airbnb.android:lottie:2.5.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'jp.wasabeef:picasso-transformations:2.2.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.miracleshed:HorizontalProgressBar:1.0'
+    implementation 'info.hoang8f:android-segmented:1.0.6'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.wonderkiln:camerakit:0.13.1'
+    implementation 'com.xeoh.android:text-highlighter:1.0.2'
+    implementation 'com.github.hkk595:Resizer:v1.5'
+    implementation 'id.zelory:compressor:2.1.0'
+    implementation 'com.google.firebase:firebase-ml-vision:17.0.0'
+    implementation 'com.google.firebase:firebase-ml-vision-image-label-model:15.0.0'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.ethanhua:skeleton:1.1.1'
+    implementation 'io.supercharge:shimmerlayout:2.1.0'
+    implementation 'com.wang.avi:library:2.1.3'
+    implementation "com.hanks:htextview-base:0.1.6"
+    implementation "com.hanks:htextview-evaporate:0.1.6"
+    implementation 'com.google.android.gms:play-services:9.4.0'
+    implementation 'com.google.android.gms:play-services-auth:9.4.0'
+    implementation 'com.android.installreferrer:installreferrer:1.0'
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+    implementation project(':MPChartLib')
+}

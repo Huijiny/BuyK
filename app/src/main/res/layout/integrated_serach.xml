@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fcfafa"
+    tools:context="com.buyk.crocompany.buyk_android.IntegratedSerach">
+
+    <com.buyk.crocompany.buyk_android.util.ClearEditText
+        android:id="@+id/searchEditText"
+        android:layout_width="278dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@null"
+        android:singleLine="true"
+        android:defaultFocusHighlightEnabled="@+id/soldBikeInput"
+        android:fontFamily="@font/default_bold"
+        android:hint="ex)BMW,아이언 883"
+        android:textColor="#b30f0f0f"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backBtn" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerInParent="true"
+        android:background="#800f0f0f"
+        app:layout_constraintBottom_toBottomOf="@id/searchEditText" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_below="@+id/tabHost"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabHost"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerInside"
+        android:background="#fcfafa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/close_4_x" />
+
+    <info.hoang8f.android.segmented.SegmentedGroup
+        xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tabHost"
+        android:layout_width="304dp"
+        android:layout_height="30.8dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchEditText"
+        android:layout_below="@+id/searchEditText"
+        android:background="@drawable/search_tab"
+        android:orientation="horizontal"
+        segmentedgroup:sc_tint_color="@color/colorOrange"
+        segmentedgroup:sc_border_width="0dp"
+        segmentedgroup:sc_corner_radius="20dp">
+
+        <RadioButton
+            android:id="@+id/modelTab"
+            android:layout_width="152dp"
+            android:layout_height="30.8dp"
+            android:text="모델"
+            android:checked="true"
+            style="@style/RadioButton" />
+
+        <RadioButton
+            android:id="@+id/categoryTab"
+
+            android:layout_width="152dp"
+            android:layout_height="30.8dp"
+            android:text="카테고리"
+            style="@style/RadioButton" />
+    </info.hoang8f.android.segmented.SegmentedGroup>
+
+
+
+</android.support.constraint.ConstraintLayout>

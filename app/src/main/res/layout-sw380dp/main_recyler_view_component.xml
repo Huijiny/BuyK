@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="170dp"
+    android:layout_height="170dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/small_radius_"
+    tools:context="com.buyk.crocompany.buyk_android.OfferingList"
+    tools:layout_editor_absoluteY="25dp">
+
+    <ImageView
+        android:id="@+id/mainBikeImage"
+        android:layout_width="170dp"
+        android:layout_height="110dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/com_kakao_brown" />
+
+    <TextView
+        android:id="@+id/mainBikePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="9.8dp"
+        android:layout_marginTop="4dp"
+        android:lineSpacingExtra="11.3sp"
+        android:text="3,000 만원"
+        android:textColor="#b30f0f0f"
+        android:textSize="16.9sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainBikeImage"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <TextView
+        android:id="@+id/mainBikeYearnDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="10dp"
+        android:lineSpacingExtra="18sp"
+        android:text="2017년식 | 30000km"
+        android:textColor="#800f0f0f"
+        android:textSize="10.1sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainBikePrice"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="101dp"
+        android:background="@drawable/midium_small_radius"
+        android:lineSpacingExtra="20.3sp"
+        android:paddingBottom="3.5dp"
+        android:paddingLeft="7.5dp"
+        android:paddingRight="7.5dp"
+        android:paddingTop="3.5dp"
+        android:text="1분 전"
+        android:textColor="#ffffff"
+        android:textSize="7.9sp"
+        app:layout_constraintEnd_toEndOf="@+id/mainBikeImage"
+        app:layout_constraintTop_toTopOf="@+id/mainBikeImage" />
+
+</android.support.constraint.ConstraintLayout>

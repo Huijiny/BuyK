@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fcfafa">
+
+
+    <Button
+        android:id="@+id/applyBtn"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:background="@drawable/filter_apply_btn"
+        android:text="적용하기"
+        android:textColor="#ffffff"
+        android:textSize="16.9dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:overScrollMode="never"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="parent">
+
+            <Button
+                android:id="@+id/resetBtn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="9dp"
+                android:background="#fcfafa"
+                android:text="초기화"
+                android:textSize="16.9sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="75dp"
+                android:layout_height="19dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:text="거래지역"
+                android:textColor="#0f0f0f"
+                android:textSize="13.5sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/closeFilterBtn" />
+
+            <Button
+                android:id="@+id/locationBtn"
+                android:layout_width="83dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="6.5dp"
+                android:background="@drawable/filter_bottomsheet_btn"
+                android:gravity="left |center_vertical"
+                android:textSize="16.9sp"
+                android:text="전국"
+                android:paddingLeft="8dp"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView8"
+                style="?android:attr/borderlessButtonStyle"/>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/default_bold"
+
+                android:text="매물 종류"
+                android:textColor="#0f0f0f"
+                android:textSize="13.5sp"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/locationBtn" />
+
+            <ToggleButton
+                android:id="@+id/button3"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="58.5dp"
+                android:layout_height="33.8dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/filter_btn"
+                android:textColor="@color/filter_text_color_change"
+                android:textOff="신차"
+                android:textOn="신차"
+                android:textSize="16.9sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <ToggleButton
+                android:id="@+id/button4"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="74.2dp"
+                android:layout_height="33.8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/filter_btn"
+                android:text="중고차"
+                android:textColor="@color/filter_text_color_change"
+                android:textOff="중고차"
+                android:textOn="중고차"
+                android:textSize="16.9sp"
+
+                app:layout_constraintBaseline_toBaselineOf="@+id/button3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/button3" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="금액"
+                android:textColor="#0f0f0f"
+                android:textSize="13.5sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/button3"
+                app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+            <com.appyvet.materialrangebar.RangeBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/rangeBar"
+                android:layout_width="308dp"
+                android:layout_height="30dp"
+                app:layout_constraintEnd_toEndOf="@+id/button4"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/button3"
+                app:layout_constraintTop_toBottomOf="@+id/price"
+                app:mrb_connectingLineColor="#f75e00"
+                app:mrb_pinMaxFont="0sp"
+                app:mrb_pinRadius="0dp"
+                app:mrb_pinTextColor="#ACD123"
+                app:mrb_rangeBarColor="#eaeaea"
+                app:mrb_rangeBarPaddingBottom="12dp"
+                app:mrb_selectorBoundaryColor="#f75e00"
+                app:mrb_selectorBoundarySize="0dp"
+                app:mrb_selectorColor="#f75e00"
+                app:mrb_selectorSize="10dp"
+                app:mrb_temporaryPins="false"
+                app:mrb_tickHeight="0dp"
+                app:mrb_tickColor="#eaeaea"
+                app:mrb_tickEnd="29"
+                app:mrb_tickInterval="1"
+                app:mrb_tickStart="1" />
+
+            <TextView
+                android:id="@+id/distanceDriven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="주행거리"
+                android:textColor="#0f0f0f"
+                android:textSize="13.5sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/button3"
+                app:layout_constraintTop_toBottomOf="@+id/priceTextField" />
+
+            <com.appyvet.materialrangebar.RangeBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/rangeBar1"
+                android:layout_width="307dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/rangeBar"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/rangeBar"
+                app:layout_constraintTop_toBottomOf="@+id/distanceDriven"
+                app:mrb_connectingLineColor="#f75e00"
+                app:mrb_pinMaxFont="10sp"
+                app:mrb_pinRadius="0dp"
+                app:mrb_pinTextColor="#ACD123"
+                app:mrb_rangeBarColor="#eaeaea"
+                app:mrb_rangeBarPaddingBottom="12dp"
+                app:mrb_selectorBoundaryColor="#eaeaea"
+                app:mrb_selectorBoundarySize="0dp"
+                app:mrb_selectorColor="#f75e00"
+                app:mrb_selectorSize="10dp"
+                app:mrb_temporaryPins="false"
+                app:mrb_tickHeight="0dp"
+                app:mrb_tickColor="#eaeaea"
+                app:mrb_tickEnd="14"
+                app:mrb_tickStart="1" />
+
+
+            <Button
+                android:id="@+id/minYearBtn"
+                android:layout_width="107dp"
+                android:layout_height="34dp"
+                android:textSize="16.9sp"
+                android:gravity="left |center_vertical"
+                android:text="최소연식"
+                android:textStyle="normal"
+                android:paddingLeft="8dp"
+                android:background="@drawable/filter_bottomsheet_long_btn"
+                app:layout_constraintStart_toStartOf="@+id/rangeBar"
+                app:layout_constraintTop_toBottomOf="@+id/deviceYearText"
+                style="?android:attr/borderlessButtonStyle"/>
+
+            <Button
+                android:id="@+id/maxYearBtn"
+                android:layout_width="107dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="68dp"
+                android:textSize="16.9sp"
+                android:gravity="left |center_vertical"
+                android:paddingLeft="8dp"
+                android:text="최대연식"
+                android:textStyle="normal"
+                android:background="@drawable/filter_bottomsheet_long_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deviceYearText"
+                style="?android:attr/borderlessButtonStyle"/>
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:text="기타 옵션"
+                android:textColor="#0f0f0f"
+                android:textSize="13.5sp"
+                app:layout_constraintStart_toStartOf="@+id/rangeBar1"
+                app:layout_constraintTop_toBottomOf="@+id/minYearBtn" />
+
+            <ToggleButton
+                android:id="@+id/noAcident"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="74.2dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/filter_btn"
+
+                android:text="무사고"
+                android:textColor="@color/filter_text_color_change"
+                android:textOff="무사고"
+                android:textOn="무사고"
+                android:textSize="16.9sp"
+                app:layout_constraintStart_toEndOf="@+id/tunning"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <ToggleButton
+                android:id="@+id/tunning"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="58.5dp"
+                android:layout_height="34dp"
+                android:background="@drawable/filter_btn"
+                android:text="순정"
+
+                android:textColor="@color/filter_text_color_change"
+                android:textOff="순정"
+                android:textOn="순정"
+                android:textSize="16.9sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/noAcident"
+                app:layout_constraintStart_toStartOf="@+id/rangeBar1"
+
+                />
+
+            <ToggleButton
+                android:id="@+id/changeIsOk"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="136.2dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="8dp"
+
+                android:layout_marginTop="8dp"
+                android:background="@drawable/filter_btn"
+                android:text="대차/교환가능"
+                android:textColor="@color/filter_text_color_change"
+                android:textOff="대차 / 교환가능"
+                android:textOn="대차 / 교환가능"
+                android:textSize="16.9sp"
+                app:layout_constraintStart_toEndOf="@+id/noAcident"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <ToggleButton
+                android:id="@+id/installmentisOk"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="182.5dp"
+                android:layout_height="34dp"
+                android:layout_marginBottom="100dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/filter_btn"
+                android:text="할부/카드/리스"
+                android:textColor="@color/filter_text_color_change"
+                android:textOff="할부 / 카드 / 리스가능"
+                android:textOn="할부 / 카드 / 리스가능"
+                android:textSize="16.9sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tunning"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/rangeBar1"
+                app:layout_constraintTop_toBottomOf="@+id/tunning" />
+
+            <TextView
+                android:id="@+id/deviceYearText"
+                android:layout_width="119dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="8dp"
+                android:text="연식"
+                android:textColor="#0f0f0f"
+                android:textSize="13.5sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/rangeBar"
+                app:layout_constraintTop_toBottomOf="@+id/DistanceTextField" />
+
+            <ImageButton
+                android:id="@+id/closeFilterBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerInside"
+                android:background="#fcfafa"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/close_4_x" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/priceTextField"
+                android:layout_width="307dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/rangeBar"
+                app:layout_constraintStart_toStartOf="@+id/rangeBar"
+                app:layout_constraintTop_toBottomOf="@+id/rangeBar">
+
+                <TextView
+                    android:id="@+id/rangeRightPrice"
+                    android:layout_width="79dp"
+                    android:layout_height="31dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@drawable/filter_btn"
+                    android:gravity="center_vertical |center_horizontal"
+                    android:textColor="#0f0f0f"
+                    android:textSize="16.9sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/priceTextField"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/rangeLeftPrice"
+                    android:layout_width="79dp"
+                    android:layout_height="34dp"
+                    android:background="@drawable/filter_btn"
+                    android:gravity="center_vertical |center_horizontal"
+                    android:textColor="#0f0f0f"
+                    android:textSize="16.9sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="부터"
+                    android:visibility="gone"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rangeLeftPrice"
+                    app:layout_constraintStart_toEndOf="@+id/rangeLeftPrice" />
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="까지"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rangeRightPrice"
+                    app:layout_constraintStart_toEndOf="@+id/rangeRightPrice" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/DistanceTextField"
+                android:layout_width="307dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/rangeBar"
+                app:layout_constraintStart_toStartOf="@+id/rangeBar"
+                app:layout_constraintTop_toBottomOf="@+id/rangeBar1">
+
+                <TextView
+                    android:id="@+id/rangeRightDistance"
+                    android:layout_width="79dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/filter_btn"
+                    android:gravity="center_vertical |center_horizontal"
+                    android:textColor="#0f0f0f"
+                    android:textSize="16.9sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/DistanceTextField"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/rangeLeftDistance"
+                    android:layout_width="79dp"
+                    android:layout_height="34dp"
+                    android:background="@drawable/filter_btn"
+                    android:gravity="center_vertical |center_horizontal"
+                    android:textColor="#0f0f0f"
+                    android:textSize="16.9sp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/textView36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="부터"
+                    android:visibility="gone"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rangeLeftDistance"
+                    app:layout_constraintStart_toEndOf="@+id/rangeLeftDistance" />
+
+                <TextView
+                    android:id="@+id/textView38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="까지"
+                    android:visibility="gone"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/rangeRightDistance"
+                    app:layout_constraintStart_toEndOf="@+id/rangeRightDistance" />
+            </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="까지"
+                app:layout_constraintStart_toEndOf="@+id/maxYearBtn"
+                app:layout_constraintTop_toBottomOf="@+id/deviceYearText" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="부터"
+                app:layout_constraintStart_toEndOf="@+id/minYearBtn"
+                app:layout_constraintTop_toBottomOf="@+id/deviceYearText" />
+
+
+
+
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+
+
+</android.support.constraint.ConstraintLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

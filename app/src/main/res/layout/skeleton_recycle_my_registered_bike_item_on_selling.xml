@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="150.5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150.5dp"
+        >
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="150.5dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/big_btn_on_selling"
+            style="?android:attr/borderlessButtonStyle"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="129.5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        >
+
+        <View
+            android:id="@+id/buttonOnSelling"
+            android:layout_width="298.5dp"
+            android:layout_height="129.5dp"
+            android:layout_marginLeft="30.8dp"
+            android:layout_marginRight="30.8dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_rectangle1"
+            />
+
+        <View
+            android:id="@+id/registeredImg"
+            android:layout_width="95.8dp"
+            android:layout_height="95.8dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16.3dp"
+            android:layout_marginRight="248dp"
+            android:layout_marginStart="18dp"
+            android:background="@drawable/img_on_selling"
+            app:layout_constraintHorizontal_bias="0.029"
+            app:layout_constraintStart_toStartOf="parent"
+             />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24.5dp"
+            android:layout_marginLeft="128.3dp"
+            android:layout_marginRight="44.3dp"
+            android:textSize="13.5sp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:id="@+id/modelName"
+                android:background="@color/light_transparent"
+                android:layout_marginRight="2dp"
+                android:text="서울" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="129.3dp"
+            android:layout_marginTop="48.3dp"
+            >
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:id="@+id/registeredPrice"
+                android:background="@color/light_transparent"
+                android:text="3,000"
+                android:textSize="20.3sp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal"
+            android:layout_marginRight="48dp"
+            android:layout_marginLeft="177.8dp"
+            android:layout_marginTop="89.5dp">
+
+
+            <View
+                android:id="@+id/finishSold"
+                style="?android:attr/borderlessButtonStyle"
+
+                android:layout_width="75.4dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="55dp"
+                android:background="@color/light_transparent"
+                android:text="판매완료"
+                android:textColor="#ffffff"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

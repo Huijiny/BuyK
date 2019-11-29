@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detailInfo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.buyk.crocompany.buyk_android.MainActivity"
+    tools:ignore="ExtraText"
+    android:orientation="vertical"
+    android:background="@color/colorBg"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="27.5dp"
+        android:textStyle="bold"
+        android:text="바이크의 \n상세정보를 입력해주세요.\n(30자 이상)"
+        android:textColor="#b30f0f0f"
+        android:textSize="20.3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/detailEdit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/detailEdit"
+        android:layout_marginStart="27.5dp"
+        android:layout_marginEnd="27.5dp"
+        android:layout_width="match_parent"
+        android:layout_height="243dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="20dp"
+        android:gravity="top"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="15dp"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintVertical_bias="0.069" />
+</LinearLayout>

@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.buyk.crocompany.buyk_android.OfferingDetail">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="?attr/colorPrimaryDark"
+            app:scrimAnimationDuration="0"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="204dp"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_collapseMode="parallax"
+                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+                app:layout_collapseParallaxMultiplier="1.0">
+
+            </com.daimajia.slider.library.SliderLayout>
+
+            <com.daimajia.slider.library.Indicators.PagerIndicator
+                android:id="@+id/custom_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5">
+
+            </com.daimajia.slider.library.Indicators.PagerIndicator>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toobar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="pin"
+                android:background="@android:color/transparent"
+                app:layout_scrollFlags="scroll|enterAlways">
+                <ImageButton
+                    android:id="@+id/backBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/arrow_left_4_x"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="30dp"
+                    android:background="#00000000"
+                    app:layout_collapseMode="none"
+                    android:visibility="gone"
+
+                    />
+                <ImageButton
+                    android:id="@+id/backBtnWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:src="@mipmap/ic_arrow_left_white"
+                    android:layout_gravity="left"
+                    android:background="#00000000"
+                    app:layout_collapseMode="none"
+
+                    />
+                <ToggleButton
+                    android:id="@+id/zeemBtn"
+                    android:layout_width="19.2dp"
+                    android:layout_height="17dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/zeem_btn"
+                    android:textOff=""
+                    android:textOn=""
+                    android:layout_gravity="right"
+                    />
+                <ToggleButton
+                    android:id="@+id/zeemBtnBlack"
+                    android:layout_width="19.2dp"
+                    android:layout_height="17dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/zeem_btn_black"
+                    android:visibility="gone"
+                    android:textOff=""
+                    android:textOn=""
+                    android:layout_gravity="right"
+                    />
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/offeringDetailScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:overScrollMode="never"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/priceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/default_bold"
+                android:lineSpacingExtra="6.75sp"
+                android:text="3,000만원"
+                android:textColor="#0f0f0f"
+                android:textSize="27dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/whenUploadTime" />
+
+
+            <View
+                android:id="@+id/divideLine1"
+                android:layout_width="315dp"
+                android:layout_height="1.2dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="12dp"
+                android:background="#300f0f0f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tradeInfoGridView" />
+
+
+
+
+            <TextView
+                android:id="@+id/tradeLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="12dp"
+                android:text="거래지역"
+                android:textColor="#b30f0f0f"
+
+                android:textSize="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/rideRange"
+                app:layout_constraintHorizontal_bias="0.41"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divideLine1" />
+
+            <TextView
+                android:id="@+id/rideRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="12dp"
+                android:text="주행거리"
+                android:textColor="#b30f0f0f"
+                android:textSize="10dp"
+
+                app:layout_constraintEnd_toStartOf="@+id/rideYear"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/tradeLocation"
+                app:layout_constraintTop_toBottomOf="@+id/divideLine1" />
+
+            <TextView
+                android:id="@+id/rideYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="85dp"
+                android:layout_marginTop="12dp"
+                android:text="연식"
+                android:textColor="#b30f0f0f"
+                android:textSize="10dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/rideRange"
+                app:layout_constraintTop_toBottomOf="@+id/divideLine1" />
+
+            <TextView
+                android:id="@+id/accidentCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="18dp"
+                android:text="사고유무"
+
+                android:textColor="#b30f0f0f"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/tradeLocation"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@+id/tradeLocation"
+                app:layout_constraintTop_toBottomOf="@+id/tradeLocationData" />
+
+            <TextView
+                android:id="@+id/paperCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+
+                android:text="서류여부"
+                android:textColor="#b30f0f0f"
+
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/rideRange"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@+id/accidentCheck"
+                app:layout_constraintTop_toBottomOf="@+id/tradeLocationData" />
+
+            <TextView
+                android:id="@+id/tradeLocationData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="서울"
+                android:textColor="@color/colorDarkGreen"
+                android:textStyle="bold"
+                android:textSize="13.5dp"
+                app:layout_constraintEnd_toEndOf="@+id/tradeLocation"
+                app:layout_constraintStart_toStartOf="@+id/tradeLocation"
+                app:layout_constraintTop_toBottomOf="@+id/tradeLocation" />
+
+            <TextView
+                android:id="@+id/rideRangeData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="30,000km"
+                android:textColor="@color/colorDarkGreen"
+                android:textSize="13.5dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/rideRange"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@+id/rideRange"
+                app:layout_constraintTop_toBottomOf="@+id/tradeLocation" />
+
+            <TextView
+                android:id="@+id/rideYearData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="2017년"
+                android:textColor="@color/colorDarkGreen"
+                android:textSize="13.5dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/rideYear"
+
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@+id/rideYear"
+                app:layout_constraintTop_toBottomOf="@+id/tradeLocation" />
+
+            <TextView
+                android:id="@+id/accidentCheckData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="무"
+                android:textStyle="bold"
+                android:textColor="@color/colorDarkGreen"
+                android:textSize="13.5dp"
+                app:layout_constraintEnd_toEndOf="@+id/accidentCheck"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@+id/accidentCheck"
+                app:layout_constraintTop_toBottomOf="@+id/accidentCheck" />
+
+            <TextView
+                android:id="@+id/paperCheckData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="모두"
+                android:textStyle="bold"
+                android:textColor="@color/colorDarkGreen"
+                android:textSize="13.5dp"
+                app:layout_constraintEnd_toEndOf="@+id/paperCheck"
+
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@+id/paperCheck"
+                app:layout_constraintTop_toBottomOf="@+id/paperCheck" />
+
+            <View
+                android:id="@+id/divideLine2"
+                android:layout_width="315dp"
+                android:layout_height="1.2dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="5dp"
+                android:background="#300f0f0f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accidentCheckData" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/bikeMarketPriceTitle"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="16dp"-->
+                <!--android:text="Buyk 스마트시세"-->
+                <!--android:textSize="16.9dp"-->
+                <!--android:textStyle="bold"-->
+                <!--app:layout_constraintEnd_toEndOf="@+id/tradeLocationData"-->
+                <!--app:layout_constraintHorizontal_bias="0.0"-->
+                <!--app:layout_constraintStart_toStartOf="@+id/divideLine2"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/divideLine2" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/buykMarketPriceData"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="1000만원~3000만원"-->
+                <!--android:textColor="#0f0f0f"-->
+                <!--android:textSize="13.5dp"-->
+                <!--app:layout_constraintEnd_toEndOf="@+id/bikeMarketPriceTitle"-->
+                <!--app:layout_constraintHorizontal_bias="0.0"-->
+                <!--app:layout_constraintStart_toStartOf="@+id/bikeMarketPriceTitle"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/bikeMarketPriceTitle" />-->
+
+            <!--<com.github.mikephil.charting.charts.BarChart-->
+                <!--android:id="@+id/chart"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="150dp"-->
+                <!--android:layout_marginBottom="8dp"-->
+                <!--android:layout_marginEnd="32dp"-->
+                <!--android:layout_marginStart="32dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:visibility="visible"-->
+                <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/buykMarketPriceData"-->
+                <!--app:layout_constraintVertical_bias="0.0" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginEnd="8dp"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:text="본 시세정보는 BuyK가 수집한 온라인 빅데이터를 활용해 분석한 정보입니다."-->
+                <!--android:textColor="#0f0f0f"-->
+                <!--android:textSize="8dp"-->
+                <!--app:layout_constraintBottom_toBottomOf="@id/chart"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintStart_toStartOf="@id/chart" />-->
+            <!--<View-->
+                <!--android:id="@+id/divideLine3"-->
+                <!--android:layout_width="315dp"-->
+                <!--android:layout_height="1.2dp"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:background="#300f0f0f"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/chart" />-->
+
+            <TextView
+                android:id="@+id/tuningTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="20dp"
+                android:text="튜닝내역"
+                android:textColor="#7b7b7b"
+                android:textSize="16.9dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/divideLine3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/divideLine2"
+                app:layout_constraintTop_toBottomOf="@+id/divideLine2" />
+
+            <TextView
+                android:id="@+id/tuningTextView"
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineSpacingExtra="9sp"
+                android:text="때돼서 팝니다"
+                android:textColor="#0f0f0f"
+                android:textSize="13.5dp"
+                app:layout_constraintEnd_toEndOf="@+id/tuningTitleText"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tuningTitleText"
+                app:layout_constraintTop_toBottomOf="@+id/tuningTitleText" />
+
+            <View
+                android:id="@+id/divideLine4"
+                android:layout_width="315dp"
+                android:layout_height="1.2dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="21dp"
+                android:background="#300f0f0f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tuningTextView" />
+
+            <TextView
+                android:id="@+id/repairDisc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="수리내역"
+                android:textColor="#7b7b7b"
+                android:textSize="16.9dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/divideLine2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/divideLine2"
+                app:layout_constraintTop_toBottomOf="@+id/divideLine4" />
+
+            <TextView
+                android:id="@+id/repairDisctextView"
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="9sp"
+                android:text="블라블라"
+                android:textColor="#0f0f0f"
+                android:textSize="13.5dp"
+                app:layout_constraintEnd_toEndOf="@+id/repairDisc"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/repairDisc"
+                app:layout_constraintTop_toBottomOf="@+id/repairDisc" />
+
+            <View
+                android:id="@+id/divideLine5"
+                android:layout_width="315dp"
+                android:layout_height="1.2dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="21dp"
+                android:background="#300f0f0f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/repairDisctextView" />
+
+            <TextView
+                android:id="@+id/detailDisc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="상세내역"
+                android:textColor="#7b7b7b"
+                android:textSize="16.9dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/divideLine2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/divideLine2"
+                app:layout_constraintTop_toBottomOf="@+id/divideLine5" />
+
+            <TextView
+                android:id="@+id/detailDiscTextView"
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="9sp"
+                android:text="ㅇㅇㅇㅇㅇ팔자팔자"
+                android:textColor="#0f0f0f"
+                android:textSize="13.5dp"
+                app:layout_constraintEnd_toEndOf="@+id/detailDisc"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/detailDisc"
+                app:layout_constraintTop_toBottomOf="@+id/detailDisc" />
+
+            <View
+                android:id="@+id/divideLine6"
+                android:layout_width="315dp"
+                android:layout_height="1.2dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="21dp"
+                android:background="#300f0f0f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailDiscTextView" />
+
+            <TextView
+                android:id="@+id/sellerDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="판매자정보"
+                android:textColor="#7b7b7b"
+                android:textSize="16.9dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/divideLine6"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/divideLine6"
+                app:layout_constraintTop_toBottomOf="@+id/divideLine6" />
+
+            <ImageView
+                android:id="@+id/sellerProfileImg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="100dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="23dp"
+                android:background="@drawable/circle_radius"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/sellerDetail"
+                app:layout_constraintTop_toBottomOf="@+id/sellerDetail"
+                app:srcCompat="@mipmap/icon" />
+
+            <TextView
+                android:id="@+id/sellerName"
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="23dp"
+                android:lineSpacingExtra="23.625sp"
+                android:text="이정윤"
+                android:textColor="#0f0f0f"
+                android:textSize="16.9dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/sellerProfileImg"
+                app:layout_constraintTop_toBottomOf="@+id/sellerDetail" />
+
+            <TextView
+                android:id="@+id/sellerPhoneNum"
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="7dp"
+                android:lineSpacingExtra="23.625sp"
+                android:text="010-5683-1571"
+                android:textColor="#0f0f0f"
+                android:textSize="16.9dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/sellerProfileImg"
+                app:layout_constraintTop_toBottomOf="@+id/sellerName" />
+
+            <TextView
+                android:id="@+id/whenUploadTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="22dp"
+                android:lineSpacingExtra="20.25sp"
+                android:textColor="#b30f0f0f"
+                android:textSize="13.5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="어제" />
+
+            <GridView
+                android:id="@+id/tradeInfoGridView"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="7dp"
+                android:columnWidth="100dp"
+                android:nestedScrollingEnabled="false"
+                android:numColumns="3"
+                android:visibility="visible"
+                android:clickable="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/priceText" />
+
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/contactLayout"
+        android:layout_width="320dp"
+        android:layout_height="67dp"
+        android:layout_gravity="center_horizontal | bottom"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/big_radius"
+
+        app:layout_behavior="com.buyk.crocompany.buyk_android.util.QuickReturnFooterBehavior"
+        tools:layout_editor_absoluteX="-1dp">
+
+        <ImageView
+            android:id="@+id/call_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/call_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/callDirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="8dp"
+            android:background="#00000000"
+            android:text="전화하기"
+            android:textColor="#ffffff"
+            android:textSize="16.9dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/divideLine7"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/call_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divideLine7"
+            android:layout_width="0.8dp"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="4dp"
+            android:background="#ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/messageDirect"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="@+id/call_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/message_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/message_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/messageDirect"
+            app:layout_constraintHorizontal_bias="0.458"
+            app:layout_constraintStart_toEndOf="@+id/divideLine7"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/messageDirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="8dp"
+            android:background="#00000000"
+            android:text="문자하기"
+            android:textColor="#ffffff"
+            android:textSize="16.9dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/divideLine7"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--UNSELECTED-->
+    <item android:state_checked="false">
+        <shape>
+            <stroke android:color="@color/colorOrange" android:width="0.2dp" />
+            <corners android:radius="15dp" />
+        </shape>
+    </item>
+    <!--SELECTED-->
+    <item android:state_checked="true">
+        <layer-list>
+            <!-- 배경 -->
+            <item>
+                <shape>
+                    <corners android:radius="15dp" />
+                    <solid android:color="#f75e00" />
+                </shape>
+            </item>
+            <!-- 이미지 영역 -->
+            <item  android:top="4dp" android:right="4dp" android:bottom="4dp" android:left="4dp" >
+                <shape>
+                    <solid android:color="@color/colorOrange" />
+                    <corners android:radius="200dp"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+</selector>

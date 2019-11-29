@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBg">
+
+    <ImageButton
+        android:id="@+id/backToMain"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerInside"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorBg"
+        android:onClick="goBackToMain"
+        app:srcCompat="@mipmap/arrow_left_4_x" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/whenLogin"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="51dp"
+        android:background="@color/colorBg"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="60.8dp"
+            android:layout_height="60.8dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="27.2dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@mipmap/ic_user" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/email"
+            android:layout_alignStart="@+id/email"
+            android:layout_alignTop="@+id/profileImage"
+            android:layout_marginBottom="13.5dp"
+            android:layout_weight="1"
+            android:text="이름"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/profileImage"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="107dp"
+            android:layout_weight="1"
+            android:text="이메일"
+            android:textSize="13.5dp" />
+
+        <TextView
+            android:id="@+id/myInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/email"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="32dp"
+            android:onClick="goToInfomationView"
+            android:text="내 정보 >"
+            android:textSize="13.5dp" />
+
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="@color/colorBg"
+        android:overScrollMode="never"
+        app:layoutManager="LinearLayoutManager"
+        tools:layout_editor_absoluteY="70dp">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>
+
+</LinearLayout>

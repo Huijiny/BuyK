@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="com.buyk.crocompany.buyk_android.OfferingImageDetail">
+
+    <com.daimajia.slider.library.SliderLayout
+        android:id="@+id/imageDatailSlider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+        app:layout_collapseParallaxMultiplier="1.0">
+
+    </com.daimajia.slider.library.SliderLayout>
+
+    <com.daimajia.slider.library.Indicators.PagerIndicator
+        android:id="@+id/custom_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_collapseParallaxMultiplier="0.5"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </com.daimajia.slider.library.Indicators.PagerIndicator>
+</android.support.constraint.ConstraintLayout>

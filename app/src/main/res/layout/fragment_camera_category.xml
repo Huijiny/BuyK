@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBg">
+
+    <!-- Camera Preview -->
+    <com.wonderkiln.camerakit.CameraView
+        android:id="@+id/camera"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:adjustViewBounds="true" />
+    <!-- /End Camera Preview -->
+
+    <!-- Overlay -->
+    <RelativeLayout
+        android:id="@+id/saveBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBg"
+        android:onClick="takeAphoto">
+
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="촬영"
+            android:textSize="20dp"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

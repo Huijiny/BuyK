@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBg"
+    tools:context=".choosingPayment">
+
+
+    <TextView
+        android:id="@+id/paymentText"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_gravity="center"
+        android:text="원하시는\n거래방법을 골라주세요!"
+        android:textStyle="bold"
+        android:textColor="#b30f0f0f"
+        android:textSize="20.3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentText">
+
+        <ToggleButton
+            android:id="@+id/cash"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="147dp"
+            android:layout_height="33.8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/payment_btn"
+            android:checked="true"
+            android:fontFamily="@font/default_regular"
+            android:textColor="@color/payment_text_color_chage"
+            android:textOff="현금"
+            android:textOn="현금"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ToggleButton
+            android:id="@+id/Daecha"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="147dp"
+            android:layout_height="33.8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/payment_btn"
+            android:fontFamily="@font/default_regular"
+            android:textColor="@color/payment_text_color_chage"
+            android:textOff="대차"
+            android:textOn="대차"
+            app:layout_constraintStart_toEndOf="@+id/cash"
+            app:layout_constraintTop_toTopOf="@+id/cash" />
+
+        <ToggleButton
+            android:id="@+id/loan"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="147dp"
+            android:layout_height="33.8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/payment_btn"
+            android:fontFamily="@font/default_regular"
+            android:textColor="@color/payment_text_color_chage"
+            android:textOff="대출"
+            android:textOn="대출"
+            app:layout_constraintEnd_toStartOf="@+id/Daecha"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/cash"
+            app:layout_constraintTop_toBottomOf="@+id/cash" />
+
+        <ToggleButton
+            android:id="@+id/card"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="147dp"
+            android:layout_height="33.8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/payment_btn"
+            android:fontFamily="@font/default_regular"
+            android:textColor="@color/payment_text_color_chage"
+            android:textOff="카드"
+            android:textOn="카드"
+            app:layout_constraintEnd_toEndOf="@+id/Daecha"
+            app:layout_constraintStart_toStartOf="@+id/Daecha"
+            app:layout_constraintTop_toBottomOf="@+id/Daecha" />
+
+        <ToggleButton
+            android:id="@+id/lease"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="147dp"
+            android:layout_height="33.8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/payment_btn"
+            android:fontFamily="@font/default_regular"
+            android:textColor="@color/payment_text_color_chage"
+            android:textOff="리스"
+            android:textOn="리스"
+            app:layout_constraintEnd_toEndOf="@+id/card"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/cash"
+            app:layout_constraintTop_toBottomOf="@+id/loan" />
+
+        <RadioButton
+            android:id="@+id/chooseAll"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/onlycash_radiobtn"
+            android:button="@android:color/transparent"
+            android:fontFamily="@font/default_regular"
+            android:text=""
+            app:layout_constraintStart_toStartOf="@+id/cash"
+            app:layout_constraintTop_toBottomOf="@+id/lease" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="전체선택"
+            app:layout_constraintBottom_toBottomOf="@+id/chooseAll"
+            app:layout_constraintEnd_toEndOf="@+id/lease"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/chooseAll"
+            app:layout_constraintTop_toTopOf="@+id/chooseAll" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

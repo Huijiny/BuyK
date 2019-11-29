@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentIsSelling"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/myRegisteredBikeItemInIsSelling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/noResultGuideTextInSelling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="140dp"
+        android:textAlignment="center"
+        android:text="판매중인 모델이 없습니다.\n\n매물을 등록해보세요."
+        android:textSize="11dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/noResultImageInSelling"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/noResultImageInSelling"
+        android:layout_width="213dp"
+        android:layout_height="106dp"
+        android:layout_marginBottom="256dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/noResultGuideTextInSelling"
+        app:layout_constraintStart_toStartOf="@+id/noResultGuideTextInSelling"
+        app:srcCompat="@drawable/ic_noresultimg_4_x" />
+</android.support.constraint.ConstraintLayout>

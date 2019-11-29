@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#f4f4f4">
+<ImageButton
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginTop="20dp"
+    android:scaleType="centerInside"
+    android:id="@+id/backToMyPageFromMyRegisteredBike"
+    android:onClick="goToMyPage"
+    android:background="#f4f4f4"
+    app:srcCompat="@mipmap/arrow_left_4_x" />
+
+        <info.hoang8f.android.segmented.SegmentedGroup xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tabHostInMyRegisteredBike"
+        android:layout_width="304dp"
+        android:layout_height="30.8dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/search_tab"
+        android:orientation="horizontal"
+            android:onClick="goBackToMain"
+        segmentedgroup:sc_border_width="0dp"
+        segmentedgroup:sc_corner_radius="20dp"
+        segmentedgroup:sc_tint_color="@color/colorOrange">
+
+        <RadioButton
+            android:id="@+id/isSelling"
+            style="@style/RadioButton"
+            android:layout_width="152dp"
+            android:layout_height="30.8dp"
+            android:textSize="12sp"
+            android:checked="true"
+            android:text="판매중" />
+
+
+        <RadioButton
+            android:id="@+id/SoldOut"
+            style="@style/RadioButton"
+            android:layout_width="152dp"
+            android:layout_height="30.8dp"
+            android:textSize="12sp"
+            android:text="지난매물" />
+    </info.hoang8f.android.segmented.SegmentedGroup>
+<android.support.v4.view.ViewPager
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/pagerInRegisteredBikeView">
+
+</android.support.v4.view.ViewPager>
+
+
+</LinearLayout>

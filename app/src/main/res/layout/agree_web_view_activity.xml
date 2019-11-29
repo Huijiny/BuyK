@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/backToLogin"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:background="@android:color/transparent"
+            android:onClick="goBackToLogin"
+            android:src="@drawable/close_4_x" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/agreeViewTitle"
+            android:text="Buyk 서비스 이용약관"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            />
+        </LinearLayout>
+    </LinearLayout>
+<WebView
+    android:id="@+id/webView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</WebView>
+</LinearLayout>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.buyk.crocompany.buyk_android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:debuggable="false"
+        android:name=".util.KaKaoMain"
+        android:icon="@mipmap/icon"
+        android:label="BuyK"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label"
+        tools:ignore="HardcodedDebugMode">
+
+        <receiver android:name=".util.NetworkChangeReceiver"
+            android:enabled="true"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data android:name="igaworks_app_key" android:value="526908729" />
+        <meta-data android:name="igaworks_hash_key" android:value="bca09049b1564431" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.buyk.crocompany.buyk_android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+            <meta-data android:name="igaworks_app_key" android:value="526908729" />
+            <meta-data android:name="igaworks_hash_key" android:value="bca09049b1564431" />
+        </provider>
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="b82cc5a5f883d7e8e315841adca672fb" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".util.LoginInMyPageDialog"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            ></activity>
+
+        <activity
+            android:name=".IntegratedSerach"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Filtter"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".soldBikeView"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+
+        </activity>
+        <activity
+            android:name=".Login"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".OfferingList"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".RealTimeList"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".util.SampleSignupActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".OfferingDetail"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".myPage.myPage"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".myPage.myInformation"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".myPage.MyPageLogin"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".MyRegisteredBike"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".util.LoginDialog"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            ></activity>
+        <activity
+            android:name=".myPage.PhoneNumberModifyView"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".AgreeWebViewActivity"/>
+        <meta-data
+            android:name="io.fabric.ApiKey,com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="c21894fb4370f3d85f8eb5315f054d65e7f826bb,label"
+            />
+
+        <activity android:name=".OfferingImageDetail" />
+        <activity android:name=".myPage.LikedList"></activity>
+        <activity android:name=".PrivateInformationUsingAgreeWebView"/>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="c21894fb4370f3d85f8eb5315f054d65e7f826bb" />
+    </application>
+
+</manifest>

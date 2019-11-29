@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    tools:context="com.buyk.crocompany.buyk_android.OfferingList"
+    tools:layout_editor_absoluteY="25dp">
+
+
+    <TextView
+        android:id="@+id/offeringYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="21dp"
+        android:text="서울 | 2017년식 | 30000km"
+        android:textColor="#800f0f0f"
+        android:textSize="13.5dp"
+        android:typeface="sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/offeringPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="3,000만원"
+        android:textColor="#b30f0f0f"
+        android:textSize="20.25dp"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="@+id/offeringYear"
+        app:layout_constraintTop_toBottomOf="@+id/offeringYear" />
+
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1.2dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="21dp"
+        android:background="#400f0f0f"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/offeringPrice" />
+
+
+</android.support.constraint.ConstraintLayout>

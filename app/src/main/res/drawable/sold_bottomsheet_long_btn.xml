@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item >
+        <layer-list>
+            <item >
+                <shape android:shape="rectangle">
+                    <solid android:color="#eaeaea" />
+                    <corners android:radius="5.6dp" />
+                </shape>
+            </item>
+
+            <item android:width="12.5dp"
+                  android:height="8dp"
+                  android:left="80dp"
+                  android:top="13dp"
+                >
+                <bitmap
+                    android:gravity="center_vertical |right |fill" android:src="@drawable/ic_arrow_down_4_x"
+                    />
+            </item>
+        </layer-list>
+    </item>
+</selector>

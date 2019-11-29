@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/basicInfoScrollView"
+    android:background="#fcfafa"
+    android:scrollbars="@null">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/basicInfo"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.buyk.crocompany.buyk_android.MainActivity"
+    tools:ignore="ExtraText"
+    android:background="@color/colorBg"
+    android:windowSoftInputMode="adjustPan">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/bikeTopText"
+            android:layout_width="237dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27.5dp"
+            android:text="바이크의\n기본정보를 입력해주세요."
+            android:textStyle="bold"
+            android:textColor="#b30f0f0f"
+            android:textSize="20.3dp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27.5dp"
+            android:layout_marginTop="13dp"
+            android:text="거래지역을 선택해주세요."
+            android:textStyle="bold"
+            android:textSize="13.5dp"
+            android:textColor="#0f0f0f"
+            android:lineSpacingExtra="20.3sp"/>
+
+        <Button
+            android:id="@+id/locationBtn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="87dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="27.5dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/sold_bottomsheet_btn"
+            android:gravity="left |center_vertical"
+            android:paddingLeft="8dp"
+            android:text="전국"
+            android:textColor="#585858"
+            android:textSize="16.9sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27.5dp"
+            android:layout_marginTop="13dp"
+            android:text="연식을 선택해주세요."
+            android:textStyle="bold"
+            android:textSize="13.5dp"
+            android:textColor="#0f0f0f"
+            android:lineSpacingExtra="20.3sp"/>
+
+
+        <Button
+            android:id="@+id/yearBtn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="107dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="27.5dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/sold_bottomsheet_long_btn"
+            android:gravity="left |center_vertical"
+            android:paddingLeft="8dp"
+            android:text="연식선택"
+            android:textColor="#585858"
+            android:textSize="16.9sp"
+            android:textStyle="normal" />
+
+
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27.5dp"
+            android:layout_marginTop="13dp"
+            android:text="판매가격을 입력해주세요."
+            android:textStyle="bold"
+            android:textSize="13.5dp"
+            android:textColor="#0f0f0f"
+            android:lineSpacingExtra="20.3dp" />
+
+        <EditText
+            android:id="@+id/bikePrice"
+            android:layout_width="125dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="27.5dp"
+            android:layout_marginTop="8dp"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:ems="10"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:inputType="numberSigned"
+            android:background="@drawable/edit_text_background_radius"
+            />
+
+
+        <info.hoang8f.android.segmented.SegmentedGroup xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tabHost"
+            android:layout_width="304dp"
+            android:layout_height="30.8dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/search_tab"
+            android:orientation="horizontal"
+            segmentedgroup:sc_border_width="0dp"
+            segmentedgroup:sc_corner_radius="20dp"
+            segmentedgroup:sc_tint_color="@color/colorOrange"
+            tools:layout_editor_absoluteY="244dp">
+
+            <RadioButton
+                android:id="@+id/newBike"
+                style="@style/RadioButton"
+                android:layout_width="152dp"
+                android:layout_height="30.8dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/default_regular"
+                android:text="신차" />
+
+            <RadioButton
+                android:id="@+id/oldBike"
+                style="@style/RadioButton"
+                android:layout_width="152dp"
+                android:layout_height="30.8dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/default_regular"
+                android:text="중고차" />
+        </info.hoang8f.android.segmented.SegmentedGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ifBikeOld"
+        android:layout_width="match_parent"
+        android:layout_height="259dp"
+        android:orientation="vertical"
+        android:background="@color/colorBg"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/distanceDriven"
+            android:layout_marginStart="27.5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="13.5dp"
+            android:textColor="#0f0f0f"
+            android:lineSpacingExtra="20.3dp"
+            android:textStyle="bold"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:text="주행거리를 입력해주세요."/>
+
+        <EditText
+            android:id="@+id/distanceDriven"
+            android:layout_width="125dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="27.5dp"
+            android:layout_marginTop="8dp"
+            android:textCursorDrawable="@drawable/cursor_color"
+            android:ems="10"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:inputType="numberSigned"
+            android:background="@drawable/edit_text_background_radius"
+            />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="27.5dp"
+            android:textSize="13.5dp"
+            android:textColor="#0f0f0f"
+            android:textStyle="bold"
+            android:lineSpacingExtra="20.3dp"
+            android:text="서류 3장이 모두 준비되어있나요?" />
+
+        <info.hoang8f.android.segmented.SegmentedGroup xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/readyDocuments"
+            android:layout_width="303dp"
+            android:layout_height="30.8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/search_tab"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            segmentedgroup:sc_border_width="0dp"
+            segmentedgroup:sc_corner_radius="20dp"
+            segmentedgroup:sc_tint_color="@color/colorOrange">
+
+            <RadioButton
+                android:id="@+id/before"
+                style="@style/RadioButton"
+                android:layout_width="101dp"
+                android:layout_height="30.8dp"
+                android:textSize="12sp"
+                android:text="폐지 전" />
+
+            <RadioButton
+                android:id="@+id/ready"
+                style="@style/RadioButton"
+                android:layout_width="101dp"
+                android:layout_height="30.8dp"
+                android:textSize="12sp"
+                android:text="준비완료" />
+
+            <RadioButton
+                android:id="@+id/no"
+                style="@style/RadioButton"
+                android:layout_width="101dp"
+                android:layout_height="30.8dp"
+                android:textSize="12sp"
+                android:text="없음" />
+        </info.hoang8f.android.segmented.SegmentedGroup>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</LinearLayout>
+</ScrollView>
